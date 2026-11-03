@@ -1,0 +1,20 @@
+databases:
+  - name: sms-gateway-db
+    plan: free
+
+services:
+  - type: web
+    name: sms-gateway-relay
+    runtime: node
+    plan: free
+    rootDir: .
+    buildCommand: npm install
+    startCommand: node index.js
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: sms-gateway-db
+          property: connectionString
+      - key: ADMIN_TOKEN
+        sync: false

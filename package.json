@@ -1,0 +1,17 @@
+{
+  "name": "sms-gateway-relay",
+  "version": "1.0.0",
+  "description": "Public relay (tunnel) server for the SMS Gateway Flutter app.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "pg": "^8.23.1",
+    "ws": "^8.14.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
